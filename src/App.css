@@ -1,0 +1,328 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap');
+
+:root {
+  --rose-50: #fff1f4;
+  --rose-100: #ffe4ea;
+  --rose-200: #fecdd9;
+  --rose-400: #fb7196;
+  --rose-500: #f4436b;
+  --rose-600: #e11d5a;
+  --rose-700: #be123f;
+  --text: #33262c;
+  --text-muted: #8a7a80;
+  --bg: #ffffff;
+  --card-bg: #ffffff;
+  --border: #eee0e3;
+
+  --pink: #ff6f9c;
+  --pink-tint: #ffeef4;
+  --purple: #9b7bff;
+  --purple-tint: #f1ecff;
+  --orange: #ff9d4d;
+  --orange-tint: #fff2e6;
+  --mint: #33c48e;
+  --mint-tint: #e8faf1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle, #e9e2e5 1px, transparent 1.5px) 0 0 / 22px 22px,
+    var(--bg);
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-size: 15px;
+  color: var(--text);
+}
+
+.app-shell {
+  max-width: 860px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 20px;
+  margin: 16px;
+  border-radius: 14px;
+  border: 2px solid var(--purple);
+  background: var(--purple-tint);
+}
+
+.brand {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--purple);
+  text-decoration: none;
+}
+
+.site-main {
+  flex: 1;
+  padding: 8px 16px 48px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 10px;
+  border: 2px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text);
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.btn-primary {
+  background: var(--pink);
+  border-color: var(--pink);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--rose-600);
+  border-color: var(--rose-600);
+}
+
+.btn-danger {
+  color: var(--rose-700);
+  border-color: var(--rose-400);
+}
+
+.btn-danger:hover {
+  background: var(--pink-tint);
+}
+
+.controls {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.search-input,
+.sort-select {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 2px solid var(--border);
+  font-size: 14px;
+  background: var(--card-bg);
+  color: var(--text);
+}
+
+.search-input:focus,
+.sort-select:focus {
+  outline: none;
+  border-color: var(--purple);
+}
+
+.search-input {
+  flex: 1;
+}
+
+.empty-state {
+  text-align: center;
+  color: var(--text-muted);
+  margin-top: 40px;
+}
+
+.post-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 16px;
+}
+
+.post-card {
+  position: relative;
+  background: var(--card-bg);
+  border: 2px solid var(--border);
+  border-radius: 14px;
+}
+
+.post-list li.post-card:nth-child(4n+1) { border-color: var(--pink); background: var(--pink-tint); }
+.post-list li.post-card:nth-child(4n+2) { border-color: var(--purple); background: var(--purple-tint); }
+.post-list li.post-card:nth-child(4n+3) { border-color: var(--orange); background: var(--orange-tint); }
+.post-list li.post-card:nth-child(4n+4) { border-color: var(--mint); background: var(--mint-tint); }
+
+.post-card-link {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 18px;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.post-time {
+  align-self: flex-start;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: white;
+  background: var(--text);
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+.post-list li.post-card:nth-child(4n+1) .post-time { background: var(--pink); }
+.post-list li.post-card:nth-child(4n+2) .post-time { background: var(--purple); }
+.post-list li.post-card:nth-child(4n+3) .post-time { background: var(--orange); }
+.post-list li.post-card:nth-child(4n+4) .post-time { background: var(--mint); }
+
+.post-title {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--text);
+}
+
+.post-upvotes {
+  align-self: flex-start;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.post-form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: var(--purple-tint);
+  border: 2px solid var(--purple);
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.post-form h1 {
+  margin: 0 0 12px;
+  font-size: 22px;
+  color: var(--purple);
+}
+
+.post-form label {
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.post-form input,
+.post-form textarea {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 2px solid var(--border);
+  font-size: 14px;
+  font-family: inherit;
+  background: var(--card-bg);
+  color: var(--text);
+}
+
+.post-form input:focus,
+.post-form textarea:focus {
+  outline: none;
+  border-color: var(--purple);
+}
+
+.post-form button {
+  margin-top: 20px;
+  align-self: flex-start;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 16px;
+  color: var(--purple);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.post-page h1 {
+  color: var(--text);
+  margin: 0 0 4px;
+  font-size: 24px;
+}
+
+.post-meta {
+  color: var(--text-muted);
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+
+.post-image {
+  max-width: 100%;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+.post-content {
+  line-height: 1.6;
+  white-space: pre-wrap;
+  margin-bottom: 20px;
+}
+
+.post-actions {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+
+.comments h2 {
+  color: var(--text);
+  font-size: 18px;
+}
+
+.comment-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.comment-form input {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 2px solid var(--border);
+}
+
+.comment-form input:focus {
+  outline: none;
+  border-color: var(--purple);
+}
+
+.comment-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.comment {
+  background: var(--mint-tint);
+  border: 2px solid var(--mint);
+  border-radius: 12px;
+  padding: 10px 14px;
+}
+
+.comment p {
+  margin: 0 0 4px;
+}
+
+.comment-time {
+  font-size: 12px;
+  color: var(--text-muted);
+}
